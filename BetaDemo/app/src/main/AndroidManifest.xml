@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.betaout.betademo"
+    android:versionCode="72"
+    android:versionName="1.0.72">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>-->
+
+    <application
+        android:allowBackup="true"
+        android:name=".App"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".ProductDetails" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".PurchaseActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <data android:scheme="beta"  android:host="showProducts" > </data>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".InboxActivity" >
+            <intent-filter>
+                <action android:name="OPEN_ME"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".ReceiverRR">
+            <intent-filter>
+                <action android:name="beta_out_events.<Project ID>" />
+                <action android:name="action.betaout.INBOX_UPDATED.<Project ID>" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".UnrestrictPushReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.betaout.UNRESTRICT_PUSH.<Project ID>" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="BO_SkipLimit"
+            android:value="true"/>
+        <meta-data
+            android:name="BO_ExplicitDIDCheck"
+            android:value="true"/>
+        <!--<meta-data
+            android:name="BO_SHOW_ONLY_LAST_RECEIVED_PUSH"
+            android:value="true"/>
+        <meta-data
+            android:name="BO_SHOW_PUSH_ONCE"
+            android:value="true"/>
+        <meta-data
+            android:name="BO_IGNORE_IMMEDIATE_PUSH_DISMISS"
+            android:value="true"/>-->
+
+
+        <meta-data
+            android:name="com.betaout.sdk.default_notification_icon"
+            android:resource="@drawable/ic_launcher" />
+
+        <meta-data
+            android:name="com.betaout.sdk.default_small_notification_icon"
+            android:resource="@drawable/t2" />
+
+
+
+        <provider
+            android:authorities="com.betaout.sdk.${applicationId}"
+            android:name="com.betaout.sdk.db.BODBContentProvider"
+            tools:replace="android:authorities"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

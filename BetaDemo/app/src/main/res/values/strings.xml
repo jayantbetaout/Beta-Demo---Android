@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Beta Demo</string>
+    <string name="content_authority">com.betaout.sdk.com.betaout.betademo</string>
+</resources>

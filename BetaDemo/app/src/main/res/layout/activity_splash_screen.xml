@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#41A5E4">
+
+    <TextView android:id="@+id/loggedIn"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"/>
+
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txtLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#FFFFFF"
+        android:text="Beta Demo"
+        android:textSize="40sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/Get_Started"
+        android:layout_width="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="#E76993"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/imgLogo"
+        android:text="E-Commerce Demo"
+        android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="#E76993"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/Get_Started"
+        android:text="Send Logs"
+        android:textAllCaps="true" />
+
+    <Button
+        android:id="@+id/Benchmark"
+        android:layout_width="wrap_content"
+        android:paddingLeft="40dp"
+    android:visibility="gone"
+        android:paddingRight="40dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="#E76993"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:onClick="benchmark"
+        android:layout_below="@+id/send"
+        android:text="Benchmark"
+        android:textAllCaps="true" />
+
+
+</RelativeLayout>
